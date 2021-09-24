@@ -1,0 +1,27 @@
+"proxy": {
+"/api": {
+"target": "http://localhost:5000"
+}
+},
+
+<a target="_blan"  href="https://www.instagram.com/"> insta</a>
+
+"proxy": "http://localhost:5000/",
+
+ this is in package.jsonfile in root folder
+
+"heroku-postbuild": "npm run install-client && npm run build ",
+
+    "start": "node backend/server.js",
+
+
+     "start": "serve -s build",
+
+
+     "install-client":"cd frontend && npm install --only=dev && npm install  && npm install",
+
+
+
+      procfiles
+
+     web: node server.js
