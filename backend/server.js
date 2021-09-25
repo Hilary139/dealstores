@@ -11,7 +11,8 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ message: "API running..." });
+ //res.json({ message: "API running..." });
+  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
 });
 
 // routes
