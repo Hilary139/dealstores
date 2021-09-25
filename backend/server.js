@@ -9,13 +9,16 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(express.static('public'))
-app.use(express.static(path.join(__dirname, "frontend", "build")));
+app.use(express.static('public')) // added this
+// added this from a doc
+const public_dir = path.join(__dirname, 'public');
+app.use(express.static(public_dir)); 
 
 // my issues is here !!!!
-app.get("/", (req, res, next) => {
- //res.json({ message: "API running..." });
-  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+app.get("/", (req, res) => {
+ //res.json({ message: "API running..." }); // removed this
+  //res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html')); // added  this later and removed as well
+  res.sendFile( __dirname + "/" + "index.html" );
 });
 
 // routes
