@@ -4,12 +4,15 @@ const productRoutes = require("./routes/productRoutes");
 const connectDB = require("./config/db");
 const path = require("path");
 
+// database connection 
 connectDB();
 
+// initalzing express.js
 const app = express();
 
+// picking up react ndex.html file
 app.use(express.json());
-app.use(express.static('public')) // added this
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 // my issues is here !!!!
 app.get("/", (req, res) => {
