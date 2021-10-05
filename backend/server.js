@@ -12,7 +12,7 @@ const app = express();
 
 // picking up react ndex.html file
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/build"))); //
 
 // my issues is here !!!!
 app.get("/", (req, res) => {
